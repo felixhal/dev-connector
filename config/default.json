@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb://felix:felix123@devconnector-shard-00-00.vzipy.mongodb.net:27017,devconnector-shard-00-01.vzipy.mongodb.net:27017,devconnector-shard-00-02.vzipy.mongodb.net:27017/DevConnector>?ssl=true&replicaSet=atlas-z5cy5z-shard-0&authSource=admin&retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "b7f125f1b9c59ed4dcbb",
+  "githubSecret": "43375113caa286368c38a0f90e1b1e9558dbaefc"
+}
