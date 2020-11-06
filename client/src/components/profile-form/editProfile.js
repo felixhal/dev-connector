@@ -30,8 +30,22 @@ const EditProfile = ({
   useEffect(() => {
     getCurrentProfile();
 
-    setFormData({});
-  });
+    setFormData({
+      company: loading || !profile.company ? '' : profile.company,
+      website: loading || !profile.website ? '' : profile.website,
+      location: loading || !profile.location ? '' : profile.location,
+      status: loading || !profile.status ? '' : profile.status,
+      skills: loading || !profile.skills ? '' : profile.skills,
+      githubusername:
+        loading || !profile.githubusername ? '' : profile.githubusername,
+      bio: loading || !profile.bio ? '' : profile.bio,
+      twitter: loading || !profile.social ? '' : profile.twitter,
+      facebook: loading || !profile.social ? '' : profile.facebook,
+      instagram: loading || !profile.social ? '' : profile.instagram,
+      youtube: loading || !profile.social ? '' : profile.youtube,
+      linkedin: loading || !profile.social ? '' : profile.linkedin,
+    });
+  }, [loading]);
 
   const {
     company,
