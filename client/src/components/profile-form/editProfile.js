@@ -35,15 +35,15 @@ const EditProfile = ({
       website: loading || !profile.website ? '' : profile.website,
       location: loading || !profile.location ? '' : profile.location,
       status: loading || !profile.status ? '' : profile.status,
-      skills: loading || !profile.skills ? '' : profile.skills,
+      skills: loading || !profile.skills ? '' : profile.skills.join(','),
       githubusername:
         loading || !profile.githubusername ? '' : profile.githubusername,
       bio: loading || !profile.bio ? '' : profile.bio,
-      twitter: loading || !profile.social ? '' : profile.twitter,
-      facebook: loading || !profile.social ? '' : profile.facebook,
-      instagram: loading || !profile.social ? '' : profile.instagram,
-      youtube: loading || !profile.social ? '' : profile.youtube,
-      linkedin: loading || !profile.social ? '' : profile.linkedin,
+      twitter: loading || !profile.social ? '' : profile.social.twitter,
+      facebook: loading || !profile.social ? '' : profile.social.facebook,
+      instagram: loading || !profile.social ? '' : profile.social.instagram,
+      youtube: loading || !profile.social ? '' : profile.social.youtube,
+      linkedin: loading || !profile.social ? '' : profile.social.linkedin,
     });
   }, [loading]);
 
@@ -67,7 +67,7 @@ const EditProfile = ({
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createProfile(formData, history);
+    createProfile(formData, history, true);
   };
 
   return (
@@ -245,13 +245,13 @@ const EditProfile = ({
   );
 };
 
-Edit.propTypes = {
+EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state = {
+const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
