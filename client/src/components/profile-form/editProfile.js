@@ -45,7 +45,18 @@ const EditProfile = ({
       youtube: loading || !profile.social ? '' : profile.social.youtube,
       linkedin: loading || !profile.social ? '' : profile.social.linkedin,
     });
-  }, [loading]);
+  }, [
+    loading,
+    profile.company,
+    profile.website,
+    profile.location,
+    profile.bio,
+    profile.githubusername,
+    profile.skills,
+    profile.status,
+    profile.social,
+    getCurrentProfile,
+  ]);
 
   const {
     company,
@@ -237,7 +248,7 @@ const EditProfile = ({
         )}
 
         <input type='submit' className='btn btn-primary my-1' />
-        <a className='btn btn-light my-1' href='dashboard.html'>
+        <a className='btn btn-light my-1' href='/dashboard'>
           Go Back
         </a>
       </form>
